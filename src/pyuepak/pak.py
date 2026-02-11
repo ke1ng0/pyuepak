@@ -238,3 +238,7 @@ class PakFile:
         data = entry.read_file(self.reader, self._footer.version, self.key)
         self.reader.close()
         return data
+        
+    def list_files(self) -> list[str]:
+        """List all files in the pak file."""
+        return list(self._index.entrys.keys())
